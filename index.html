@@ -475,7 +475,6 @@ body.dark .q-theme-label{color:#00b4d8}
 /* ─── MOBILE RESPONSIVE ─── */
 @media (max-width: 768px) {
 
-  /* Body & app — remove padding, fill screen */
   body, body.dark { padding: 0 !important; overflow: hidden; align-items: stretch; }
 
   .app {
@@ -487,56 +486,79 @@ body.dark .q-theme-label{color:#00b4d8}
     max-width: 100%;
   }
 
-  /* Animated background pseudo-elements still show */
   body::before, body::after { display: block; }
 
-  /* ── Icon nav becomes horizontal top bar ── */
-  .icon-nav {
-    width: 100% !important;
-    height: auto;
-    flex-direction: row;
-    padding: 0;
-    gap: 0;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    overflow-x: auto;
-    flex-shrink: 0;
-    justify-content: flex-start;
-  }
-  .icon-nav::-webkit-scrollbar { display: none; }
-  .icon-nav .top-icons {
-    flex-direction: row;
-    padding: 0 8px;
-    border-bottom: none;
-    border-right: 1px solid rgba(255,255,255,0.2);
-    margin-bottom: 0;
-    width: auto;
-    flex-shrink: 0;
-    align-items: center;
-    height: 52px;
-  }
-  .icon-nav .top-icons i { padding: 6px; }
-  .nav-item {
-    flex-direction: row;
-    gap: 5px;
-    padding: 0 12px;
-    width: auto;
-    height: 52px;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-  .nav-item i { font-size: 14px; }
-  .nav-item span { font-size: 9px; }
-  .nav-item.active::before {
-    top: auto; bottom: 0; left: 10%; right: 10%;
-    width: auto; height: 3px;
-    border-radius: 2px 2px 0 0;
-  }
+  /* ── Hide desktop icon nav ── */
+  .icon-nav { display: none !important; }
 
-  /* ── Main content area fills remaining height ── */
+  /* ── Hamburger top bar ── */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    padding: 0 16px;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid #e8e8e8;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 200;
+  }
+  body.dark .mobile-topbar { background: rgba(30,42,58,0.97); border-bottom-color: #2a3a4f; }
+  .mobile-topbar-title { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+  body.dark .mobile-topbar-title { color: #e8f4ff; }
+  .mobile-hamburger {
+    width: 36px; height: 36px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 5px; cursor: pointer; border-radius: 8px;
+    transition: background .2s;
+  }
+  .mobile-hamburger:hover { background: rgba(0,0,0,0.06); }
+  .mobile-hamburger span {
+    display: block; width: 20px; height: 2px;
+    background: #555; border-radius: 2px;
+    transition: all .3s ease;
+  }
+  body.dark .mobile-hamburger span { background: #a0b4c8; }
+  .mobile-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-hamburger.open span:nth-child(2) { opacity: 0; }
+  .mobile-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── Dropdown menu ── */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 52px; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    border-bottom: 1px solid #e8e8e8;
+    z-index: 199;
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  body.dark .mobile-menu { background: rgba(22,33,46,0.98); border-bottom-color: #2a3a4f; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-item {
+    display: flex; align-items: center;
+    gap: 12px; padding: 12px 20px;
+    font-size: 13px; font-weight: 500;
+    color: #555; cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .mobile-menu-item .mmicon { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+  .mobile-menu-item:hover { background: #f5f5f5; color: #4CAF50; }
+  .mobile-menu-item.active { color: #4CAF50; font-weight: 600; background: #f9fff9; }
+  body.dark .mobile-menu-item { color: #8fa8c0; }
+  body.dark .mobile-menu-item:hover { background: #1e2a3a; color: #e8f4ff; }
+  body.dark .mobile-menu-item.active { color: #00b4d8; background: #1a2a3a; }
+
+  /* ── Theme toggle in topbar ── */
+  .mobile-topbar #themeToggle { display: flex; }
+
+  /* ── Hide profile card, show inline on About ── */
   .app > .profile-card { display: none; }
 
-  /* Main panel full width, scrollable */
   .main-panel {
     flex: 1;
     width: 100% !important;
@@ -611,10 +633,35 @@ body.dark .q-theme-label{color:#00b4d8}
   /* Theme toggle button size */
   #themeToggle { width: 28px; height: 28px; }
 }
+@media (min-width: 769px) {
+  .mobile-topbar, .mobile-menu { display: none !important; }
+}
 </style>
 </head>
 <body>
 <div class="app">
+
+  <!-- ── Mobile top bar (hamburger) ── -->
+  <div class="mobile-topbar" id="mobileTopbar" style="display:none">
+    <div class="mobile-hamburger" id="mobileHamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="mobile-topbar-title" id="mobilePageTitle">About</div>
+    <div id="themeToggleMobile" title="Toggle theme" onclick="toggleTheme()" style="width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.1)">
+      <i id="themeIconMobile" class="fas fa-moon" style="color:#555;font-size:13px"></i>
+    </div>
+  </div>
+
+  <!-- ── Mobile dropdown menu ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-item active" onclick="mobileNav('about','About',this)"><span class="mmicon">👤</span>About</div>
+    <div class="mobile-menu-item" onclick="mobileNav('resume','Journey',this)"><span class="mmicon">📄</span>Professional Journey</div>
+    <div class="mobile-menu-item" onclick="mobileNav('deals','Deals',this)"><span class="mmicon">📈</span>Deals &amp; Wins</div>
+    <div class="mobile-menu-item" onclick="mobileNav('recog','Awards',this)"><span class="mmicon">🏆</span>Recognition</div>
+    <div class="mobile-menu-item" onclick="mobileNav('gtm','GTM',this)"><span class="mmicon">🎯</span>GTM Material</div>
+    <div class="mobile-menu-item" onclick="mobileNav('agentic','Agentic',this)"><span class="mmicon">🤖</span>Agentic AI</div>
+    <div class="mobile-menu-item" onclick="mobileNav('next','Next',this)"><span class="mmicon">🚀</span>Next Chapter</div>
+  </div>
 
 <!-- ── ICON NAV ── -->
 <nav class="icon-nav">
@@ -1052,17 +1099,42 @@ const io = new IntersectionObserver(entries=>{
   });
 },{threshold:0.1, root:panel});
 
-/* ── Mobile profile block visibility ── */
-function handleMobileLayout() {
+/* ── Mobile hamburger menu ── */
+function toggleMobileMenu(){
+  const menu = document.getElementById("mobileMenu");
+  const btn = document.getElementById("mobileHamburger");
+  menu.classList.toggle("open");
+  btn.classList.toggle("open");
+}
+function mobileNav(id, title, el){
+  showPage(id, document.querySelector(`.nav-item[onclick*="'${id}'"]`));
+  document.getElementById("mobilePageTitle").textContent = title;
+  document.querySelectorAll(".mobile-menu-item").forEach(i=>i.classList.remove("active"));
+  el.classList.add("active");
+  document.getElementById("mobileMenu").classList.remove("open");
+  document.getElementById("mobileHamburger").classList.remove("open");
+}
+function handleMobileLayout(){
   const isMobile = window.innerWidth <= 768;
+  const topbar = document.getElementById("mobileTopbar");
+  if(topbar) topbar.style.display = isMobile ? "flex" : "none";
   const block = document.getElementById("mobileProfileBlock");
-  if (block) block.style.display = isMobile ? "flex" : "none";
+  if(block) block.style.display = isMobile ? "flex" : "none";
   const mobilePhoto = document.getElementById("mobilePhoto");
   const desktopPhoto = document.getElementById("profilePhoto");
-  if (mobilePhoto && desktopPhoto) mobilePhoto.src = desktopPhoto.src;
+  if(mobilePhoto && desktopPhoto) mobilePhoto.src = desktopPhoto.src;
 }
 handleMobileLayout();
 window.addEventListener("resize", handleMobileLayout);
+
+/* Also sync mobile theme icon */
+const _origToggle = toggleTheme;
+toggleTheme = function(){
+  _origToggle();
+  const mIcon = document.getElementById("themeIconMobile");
+  const dIcon = document.getElementById("themeIcon");
+  if(mIcon && dIcon) mIcon.className = dIcon.className;
+};
 
 let isDark = false;
 function toggleTheme(){
