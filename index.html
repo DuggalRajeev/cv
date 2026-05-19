@@ -192,7 +192,7 @@ body.dark .next-impact strong{color:#00b4d8}
   transition:all .25s;position:relative;
 }
 .nav-item i{font-size:18px;color:rgba(255,255,255,0.6);transition:color .25s}
-.nav-item span{font-size:8.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color .25s}
+.nav-item span{font-size:8.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color .25s;text-align:center;line-height:1.3;word-break:break-word;white-space:normal}
 .nav-item.active i,.nav-item:hover i{color:#fff}
 .nav-item.active span,.nav-item:hover span{color:#fff}
 .nav-item.active::before{content:"";position:absolute;left:0;top:20%;bottom:20%;width:3px;background:#fff;border-radius:0 2px 2px 0}
@@ -428,6 +428,21 @@ body.dark .main-panel::-webkit-scrollbar-thumb{background:#00b4d8}
 .aw-cite{background:#f9fff9;border-left:3px solid #4CAF50;padding:11px 14px;border-radius:0 6px 6px 0;margin-top:2px}
 .aw-cite p{font-size:12px;color:#666;line-height:1.75;font-style:italic}
 .aw-cite .by{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4CAF50;margin-top:7px}
+.lm-group{margin-bottom:16px}
+.lm-group:last-child{margin-bottom:0}
+.lm-title{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#4CAF50;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #f0f0f0}
+body.dark .lm-title{color:#00b4d8;border-bottom-color:#2a3a4f}
+.lm-bullets{margin:6px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:6px}
+.lm-bullets li{font-size:11.5px;color:#aaa;line-height:1.7}
+body.dark .lm-bullets li{color:#4a6a8a}
+.lm-para{font-size:11.5px;color:#aaa;line-height:1.7;margin:6px 0 0}
+.lm-para strong{color:#1a1a2e;font-weight:600}
+body.dark .lm-para{color:#4a6a8a}
+body.dark .lm-para strong{color:#e8f4ff}
+.lm-para{font-size:13px;color:#555;line-height:1.7;margin:6px 0 0}
+.lm-para strong{color:#1a1a2e}
+body.dark .lm-para{color:#8fa8c0}
+body.dark .lm-para strong{color:#e8f4ff}
 .q-theme-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#4CAF50;margin:20px 0 8px;padding-left:2px}
 body.dark .q-theme-label{color:#00b4d8}
 .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
@@ -451,7 +466,9 @@ body.dark .q-theme-label{color:#00b4d8}
 .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .next-card{background:#fff;border:1px solid #f0f0f0;border-radius:10px;padding:22px;transition:all .3s}
 .next-card:hover{border-color:#4CAF50;box-shadow:0 4px 16px rgba(76,175,80,0.1)}
-.next-num{font-size:52px;font-weight:700;color:rgba(76,175,80,0.1);line-height:1;letter-spacing:-2px;margin-bottom:2px}
+.next-num{font-size:32px;line-height:1;margin-bottom:8px}
+.next-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;font-size:24px;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.2)}
+body.dark .next-icon{background:rgba(0,180,216,0.12);border-color:rgba(0,180,216,0.25);filter:brightness(1.1)}
 .next-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
 .next-bullets{font-size:12.5px;color:#777;line-height:1.72}
 .next-bullets li{margin-left:1rem;margin-top:3px}
@@ -582,7 +599,7 @@ body.dark .q-theme-label{color:#00b4d8}
     width: 80px; height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
     flex-shrink: 0;
     border: 3px solid #4CAF50;
   }
@@ -655,12 +672,12 @@ body.dark .q-theme-label{color:#00b4d8}
   <!-- ── Mobile dropdown menu ── -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-item active" onclick="mobileNav('about','About',this)"><span class="mmicon">👤</span>About</div>
-    <div class="mobile-menu-item" onclick="mobileNav('resume','Journey',this)"><span class="mmicon">📄</span>Professional Journey</div>
-    <div class="mobile-menu-item" onclick="mobileNav('deals','Deals',this)"><span class="mmicon">📈</span>Deals &amp; Wins</div>
-    <div class="mobile-menu-item" onclick="mobileNav('recog','Awards',this)"><span class="mmicon">🏆</span>Recognition</div>
-    <div class="mobile-menu-item" onclick="mobileNav('gtm','GTM',this)"><span class="mmicon">🎯</span>GTM Material</div>
-    <div class="mobile-menu-item" onclick="mobileNav('agentic','Agentic',this)"><span class="mmicon">🤖</span>Agentic AI</div>
-    <div class="mobile-menu-item" onclick="mobileNav('next','Next',this)"><span class="mmicon">🚀</span>Next Chapter</div>
+    <div class="mobile-menu-item" onclick="mobileNav('resume','Journey',this)"><span class="mmicon">📄</span>Journey</div>
+    <div class="mobile-menu-item" onclick="mobileNav('deals','Deals',this)"><span class="mmicon">📈</span>Deals</div>
+    <div class="mobile-menu-item" onclick="mobileNav('recog','Mentorship &amp; Awards',this)"><span class="mmicon">🏆</span>Mentorship &amp; Awards</div>
+    <div class="mobile-menu-item" onclick="mobileNav('gtm','GTM',this)"><span class="mmicon">🎯</span>GTM</div>
+    <div class="mobile-menu-item" onclick="mobileNav('agentic','Agentic',this)"><span class="mmicon">🤖</span>Agentic</div>
+    <div class="mobile-menu-item" onclick="mobileNav('next','Next',this)"><span class="mmicon">🚀</span>Next</div>
   </div>
 
 <!-- ── ICON NAV ── -->
@@ -680,7 +697,7 @@ body.dark .q-theme-label{color:#00b4d8}
     <i class="fas fa-chart-line"></i><span>Deals</span>
   </div>
   <div class="nav-item" onclick="showPage('recog',this)">
-    <i class="fas fa-trophy"></i><span>Awards</span>
+    <i class="fas fa-trophy"></i><span>Mentorship<br>&amp;<br>Awards</span>
   </div>
   <div class="nav-item" onclick="showPage('gtm',this)">
     <i class="fas fa-drafting-compass"></i><span>GTM</span>
@@ -714,9 +731,9 @@ body.dark .q-theme-label{color:#00b4d8}
       <span class="ptag">Presales Advisor</span>
       <span class="ptag">Agentic AI Builder</span>
       <span class="ptag">AI-driven Presales</span>
-      <span class="ptag">Innovation Catalyst</span>
+      <span class="ptag">Digital Transformation Driver</span>
       <span class="ptag">Multi-solution Integrator</span>
-      <span class="ptag" style="width:100%;text-align:center">Digital Transformation Driver</span>
+      <span class="ptag" style="width:100%;text-align:center">Innovation Catalyst</span>
     </div>
     <div class="profile-socials">
       <a href="https://www.linkedin.com/in/rajeevduggal86/" target="_blank" style="text-decoration:none"><div class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></div></a>
@@ -768,11 +785,11 @@ body.dark .q-theme-label{color:#00b4d8}
         <div class="fact-val">~<span class="count" data-t="22.8">0</span>M</div>
         <div class="fact-lbl">Total Wins</div>
       </div>
-      <div class="fact-card" onclick="showPage('deals', document.querySelector('[onclick*=deals]'))" style="cursor:pointer">
+      <div class="fact-card" onclick="showPage('deals', document.querySelector('[onclick*=deals]')); setTimeout(()=>{ document.getElementById('named-accounts').scrollIntoView({behavior:'smooth'}); }, 150)" style="cursor:pointer">
         <div class="fact-val"><span class="count" data-t="16">0</span>+</div>
         <div class="fact-lbl">Named Accounts</div>
       </div>
-      <div class="fact-card">
+      <div class="fact-card" onclick="showPage('resume', document.querySelector('[onclick*=resume]')); setTimeout(()=>{ document.getElementById('certifications-section').scrollIntoView({behavior:'smooth'}); }, 150)" style="cursor:pointer">
         <div class="fact-val"><span class="count" data-t="5">0</span></div>
         <div class="fact-lbl">Adobe Certifications</div>
       </div>
@@ -780,20 +797,20 @@ body.dark .q-theme-label{color:#00b4d8}
 
     <div class="sec-heading fade-up"><span class="acc">M</span>y Areas of Expertise</div>
     <div class="services-grid stagger">
-      <div class="service-card">
+      <div class="service-card" style="grid-column:1/-1">
         <div class="service-icon"><i class="fas fa-layer-group"></i></div>
         <div class="service-title">Shaping Customer Experiences</div>
         <div class="service-desc">Adobe Experience Manager, Cloud Service and Edge Delivery Services, Headless setup, Content Supply Chain, GenStudio, LLMO, Adobe Learning Manager.</div>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="showPage('gtm', document.querySelector('[onclick*=gtm]'))" style="cursor:pointer">
+        <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+        <div class="service-title">Presales, GTM &amp; Strategy</div>
+        <div class="service-desc">Expert scoping, solution design and proposal leadership across EMEA. EDS Scopezilla co-creator, first XWalk in EMEA, and author of foundational GTM packages across regions.</div>
+      </div>
+      <div class="service-card" onclick="showPage('agentic', document.querySelector('[onclick*=agentic]'))" style="cursor:pointer">
         <div class="service-icon"><i class="fas fa-robot"></i></div>
         <div class="service-title">Agentic AI</div>
         <div class="service-desc">Building IS Activations Advisor, Assumption Generator, SOW Validator — AI-driven presales transformation.</div>
-      </div>
-      <div class="service-card" style="grid-column:1/-1">
-        <div class="service-icon"><i class="fas fa-handshake"></i></div>
-        <div class="service-title">Presales, GTM &amp; Strategy</div>
-        <div class="service-desc">Expert scoping, solution design and proposal leadership across EMEA. EDS Scopezilla co-creator, first XWalk in EMEA, and author of foundational GTM packages across regions.</div>
       </div>
     </div>
   </div>
@@ -858,7 +875,7 @@ body.dark .q-theme-label{color:#00b4d8}
       </div>
       <div>
         <div class="res-section fade-up">
-          <div class="res-section-title"><i class="fas fa-certificate"></i>Certifications</div>
+          <div id="certifications-section" class="res-section-title"><i class="fas fa-certificate"></i>Certifications</div>
           <div class="tl-item">
             <div class="tl-yr">Master</div>
             <div class="tl-role">Adobe Certified Master</div>
@@ -898,13 +915,38 @@ body.dark .q-theme-label{color:#00b4d8}
       <div class="deal-card"><div class="d-yr">FY24</div><div class="d-meta">Pipeline ~$25M · Wins ~$8.1M</div><div class="d-row"><span class="d-name">M.H. Alshaya</span><span class="d-val">$2.4M</span></div><div class="d-row"><span class="d-name">SAP SE</span><span class="d-val">$2.4M</span></div><div class="d-row"><span class="d-name">Centre Parcs</span><span class="d-val">$1.6M</span></div><div class="d-row"><span class="d-name">H&amp;M Phase 2 &amp; 3</span><span class="d-val">$964K</span></div><div class="d-row"><span class="d-name">PMI</span><span class="d-val">$735K</span></div><div class="d-row"><span class="d-name">Jet2</span><span class="d-val">$50K</span></div></div>
       <div class="deal-card"><div class="d-yr">FY23</div><div class="d-meta">Pipeline ~$22M · Wins ~$4.5M</div><div class="d-row"><span class="d-name">VW Group</span><span class="d-val">$1.5M</span></div><div class="d-row"><span class="d-name">Mercury Marine / Brunswick</span><span class="d-val">$1.4M</span></div><div class="d-row"><span class="d-name">H&amp;M</span><span class="d-val">$620K</span></div><div class="d-row"><span class="d-name">PMI</span><span class="d-val">$551K</span></div><div class="d-row"><span class="d-name">UoN</span><span class="d-val">$490K</span></div><div class="d-row"><span class="d-name">ABCAM</span><span class="d-val">$28K</span></div></div>
     </div>
-    <div class="sec-heading fade-up" style="font-size:15px"><span class="acc">N</span>amed Accounts</div>
+    <div id="named-accounts" class="sec-heading fade-up" style="font-size:15px"><span class="acc">N</span>amed Accounts</div>
     <div class="tag-cloud fade-up"><span class="tag">PMI</span><span class="tag">H&amp;M</span><span class="tag">M.H. Alshaya</span><span class="tag">Centre Parcs</span><span class="tag">UoN</span><span class="tag">Amadeus</span><span class="tag">Capgemini</span><span class="tag">DTAG</span><span class="tag">Nordea</span><span class="tag">KION</span><span class="tag">HSBC</span><span class="tag">LV</span><span class="tag">VFS Global</span><span class="tag">RICS</span><span class="tag">S Management Services</span><span class="tag">Standard Bank SA</span></div>
   </div>
 
   <!-- RECOGNITION -->
   <div id="page-recog" class="page">
-    <div class="sec-heading fade-up"><span class="acc">R</span>ecognition</div>
+    <div class="sec-heading fade-up"><span class="acc">M</span>entorship &amp; Awards</div>
+
+    <div class="award-card fw" style="margin-bottom:24px">
+      <div class="aw-top" style="margin-bottom:16px">
+        <div class="aw-icon">🧑‍🏫</div>
+        <div>
+          <div class="aw-label">EMEA SAi Team</div>
+          <div class="aw-title">Team Leadership &amp; Enablement</div>
+          <div class="aw-sub">Mentoring, knowledge sharing and talent building across the EMEA SA practice</div>
+        </div>
+      </div>
+      <div class="lm-group">
+        <div class="lm-title">Direct Mentorship &amp; Onboarding</div>
+        <ul class="lm-bullets"><li>Drove regional talent acceleration by onboarding and advising emerging EMEA SAs. Strategic mentorship enabled a key offshore AEM SA to assume end-to-end ownership of complex deals independently.</li></ul>
+      </div>
+      <div class="lm-group">
+        <div class="lm-title">Knowledge Sharing &amp; Enablement</div>
+        <ul class="lm-bullets"><li>Established a culture of continuous learning via weekly onshore SA knowledge-sharing forums, standardizing team alignment on emerging AEM frameworks and GenAI strategies.</li><li>Empowered the SABA consulting practice through structured EDS enablement, refining cross-functional proficiency in XWalk architecture and Scopezilla scoping models.</li></ul>
+      </div>
+      <div class="lm-group">
+        <div class="lm-title">Hiring &amp; Team Building</div>
+        <ul class="lm-bullets"><li>Acted as a trusted talent evaluator, contributing to 5–6 high-stakes SA interviews quarterly across TSA/CXA streams to scale EMEA delivery capacity.</li><li>Safeguarded and raised the organizational benchmark for incoming technical expertise, directly influencing the quality and caliber of the EMEA SA practice.</li></ul>
+      </div>
+    </div>
+
+    <div class="sec-heading fade-up" style="font-size:15px"><span class="acc">A</span>dobe Recognition</div>
     <div class="award-cards stagger">
       <div class="award-card">
         <div class="aw-top"><div class="aw-icon">🏆</div><div><div class="aw-label">Q1 FY2024</div><div class="aw-title">Functional SA Award</div><div class="aw-sub">Recognised for driving $2M in bookings</div></div></div>
@@ -915,6 +957,7 @@ body.dark .q-theme-label{color:#00b4d8}
         <div class="aw-cite"><p>"Your leadership, both on deals and solution excellence is deeply appreciated. In Q1 you played a critical role in getting us near to the target booking numbers with big influence on deals/proactive proposals like Al‑Shaya, PMI &amp; Center‑Parcs. Similarly your contribution in the GTM space of EDS and other threads is a great value add. Truly a well-deserved accomplishment."</p><div class="by">— Leadership Citation · Q1 FY2025 Award</div></div>
       </div>
     </div>
+
     <div class="sec-heading fade-up" style="font-size:15px"><span class="acc">P</span>eer &amp; Leadership Quotes</div>
 
     <div class="q-theme-label">🤝 Collaboration &amp; AEM Expertise</div>
@@ -950,7 +993,7 @@ body.dark .q-theme-label{color:#00b4d8}
 
   <!-- GTM -->
   <div id="page-gtm" class="page">
-    <div class="sec-heading fade-up"><span class="acc">G</span>TM Material &amp; Initiatives</div>
+    <div class="sec-heading fade-up"><span class="acc">G</span>TM Initiatives</div>
     <div class="gtm-grid stagger">
       <div class="gtm-card"><div class="g-yr">FY22–23</div><div class="g-title">Foundation GTM Assets</div><ul class="g-list"><li>AEM Headless T-shirt Sizing Starter — enabled PSS to qualify independently</li><li>ALM DX GTM offering — Experience Driven + Headless ALM</li><li>Headless Implementation Package — complex headless scoping reference</li><li>Case qualification checklist</li></ul></div>
       <div class="gtm-card"><div class="g-yr">FY24</div><div class="g-title">EDS GTM Leadership and Community Support</div><ul class="g-list"><li>EDS Scopezilla — co-developed interim scoping calculator</li><li>First XWalk scoping in EMEA (Channel)</li><li>EDS knowledge sessions for SABA team</li><li>AEM Architect cert exam validation</li><li>AEM Developer certification co-authoring</li><li>GenAI PoV for Customers</li></ul></div>
@@ -988,13 +1031,12 @@ body.dark .q-theme-label{color:#00b4d8}
 
   <!-- NEXT LEVEL -->
   <div id="page-next" class="page">
-    <div class="sec-heading fade-up"><span class="acc">N</span>ext Level Scope</div>
+    <div class="sec-heading fade-up"><span class="acc">N</span>ext Level Aspiration</div>
     <div class="next-grid stagger">
-      <div class="next-card"><div class="next-num">01</div><div class="next-title">Scale AI-led Presales Globally</div><ul class="next-bullets"><li>Operationalised IS Activations Advisor with guardrails</li><li>Recognised by leadership as a seller accelerator</li><li>Agent AI Cohort running as a programme</li></ul><div class="next-impact"><strong>At next level:</strong> Define global AI adoption roadmap across EMEA, NA, and APAC.</div></div>
-      <div class="next-card"><div class="next-num">02</div><div class="next-title">Own EDS + Agentic + LLMO GTM</div><ul class="next-bullets"><li>Primary contributor to EDS Scopezilla and LLMO offering</li><li>EDS SME from inception — first XWalk in EMEA</li></ul><div class="next-impact"><strong>At next level:</strong> Own the standard EDS + Agentic service catalogue globally.</div></div>
-      <div class="next-card"><div class="next-num">03</div><div class="next-title">Tier-1 EMEA Deal Architect</div><ul class="next-bullets"><li>Go-to SA for AstraZeneca, Siemens, Alshaya, DTAG</li><li>De-facto SA on DTAG — biggest APS new logo FY25</li></ul><div class="next-impact"><strong>At next level:</strong> Own deal shaping and closure for all Tier-1 accounts.</div></div>
-      <div class="next-card"><div class="next-num">04</div><div class="next-title">Capability Building &amp; Mentorship</div><ul class="next-bullets"><li>Recognised as "silent mentor" by multiple leaders</li><li>Upskilled newer EMEA SAs to full independence</li><li>5–6 hiring interviews per quarter</li></ul><div class="next-impact"><strong>At next level:</strong> Lead structured enablement in Agentic AI, EDS, multi-solution.</div></div>
-      <div class="next-card next-fw"><div class="next-num">05</div><div class="next-title">Own Pipeline Strategy — EMEA</div><ul class="next-bullets" style="columns:2;gap:24px"><li>Long track record of pipeline analytics and data hygiene</li><li>QBR readouts and pipeline intelligence that leaders act on</li><li>Proactively identified uncovered opportunities across EMEA</li></ul><div class="next-impact"><strong>At next level:</strong> Own pipeline strategy — qualification standards, deal frameworks, and reporting norms.</div></div>
+      <div class="next-card next-fw"><div class="next-num"><span class="next-icon">🔬</span></div><div class="next-title">Technical</div><ul class="next-bullets"><li>Evolve from being an EMEA EDS SME to a global-level SME — drive formal GTM contributions, develop new offers, PoVs, and insights with worldwide applicability, extending impact well beyond regional boundaries.</li><li>Build and roll out Adobe AI delivery playbooks — define new processes, roles, phases, and estimation guides that enable consistent AI-led pitch narratives across all customer conversations and proposals.</li><li>Expand breadth across Adobe's Customer Experience portfolio to independently own the full solution lifecycle on Multi-Solution deals — from early discovery and technical positioning through to scoping and closure.</li><li>Deepen mastery of Agentic AI capabilities within Adobe products — define service offerings, build contextual PoVs, and enable the broader SA and Sales community to confidently position and sell agent-driven solutions.</li></ul></div>
+      <div class="next-card next-fw"><div class="next-num"><span class="next-icon">🧭</span></div><div class="next-title">Strategical</div><ul class="next-bullets"><li>Apply an industry-specific lens on customer use cases — develop strategies that address customer challenges using Adobe-adjacent ecosystems, moving conversations beyond product features toward business transformation outcomes.</li><li>Surface newer investible ideas that expand the SAi charter — proactively identify whitespace opportunities such as new Business Development models, DME Firefly-DX, PPBU collaboration models, and innovative delivery constructs.</li><li>Develop research-led, specific PoVs and stories that help sellers and customers see value in proactive engagements — rolled out as pipeline generation assets globally, originating from SA PoDs and broadcast consistently to the field.</li></ul></div>
+      <div class="next-card"><div class="next-num"><span class="next-icon">👥</span></div><div class="next-title">SAi Team Leadership</div><ul class="next-bullets"><li>Drive reimagined delivery models with AI — define what "Run Different, Run Better, Run More" means for the SA function as AI reshapes sales and solutioning.</li><li>Own and drive the AI adoption program within the SAi team in a structured, program-based fashion — move beyond initiation to sustained execution, measuring adoption outcomes consistently.</li><li>Create repeatable recipes and playbooks for Integrated Services — standardize approaches so the wider team can independently pick and apply them across different pursuits.</li><li>Drive diversification in deal types across the team — spanning Content, Agentic, and Multi-Solution — and lead by example on bigger deals across a wider set of accounts.</li></ul></div>
+      <div class="next-card"><div class="next-num"><span class="next-icon">🌐</span></div><div class="next-title">ACS Leadership</div><ul class="next-bullets"><li>Establish as the de-facto owner of Multi-Solution SPP deals in EMEA — operate as the SPP SME, finding creative ways to influence deal and account impact, and build a repeatable recipe others can learn from.</li><li>Emerge as a recognized thought leader and solution expert beyond EMEA — contribute visibly to global solution pods, field enablement initiatives, and external platforms, building personal differentiation through deep expertise in Agentic AI and integrated DX services.</li></ul></div>
     </div>
   </div>
 
