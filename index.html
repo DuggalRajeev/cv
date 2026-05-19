@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -211,6 +211,7 @@ body.dark .next-impact strong{color:#00b4d8}
   border-right:1px solid #e8e8e8;
   overflow:hidden;
   position:relative;
+  border-radius:16px 0 0 16px;
 }
 /* Photo fills top ~55% */
 .profile-photo-wrap{
@@ -288,12 +289,13 @@ body.dark .ptag:hover{border-color:#00b4d8;color:#00b4d8}
   overflow-y:auto;
   overflow-x:hidden;
   scroll-behavior:smooth;
+  min-height:0;
 }
 .main-panel::-webkit-scrollbar{width:4px}
 .main-panel::-webkit-scrollbar-thumb{background:#4CAF50;border-radius:2px}
 
 /* Section pages */
-.page{display:none;padding:44px 48px 60px;min-height:100%}
+.page{display:none;padding:44px 48px 60px;min-height:auto}
 .page.active{display:block;animation:fadeIn .4s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
@@ -425,7 +427,9 @@ body.dark .ptag:hover{border-color:#00b4d8;color:#00b4d8}
 .aw-cite{background:#f9fff9;border-left:3px solid #4CAF50;padding:11px 14px;border-radius:0 6px 6px 0;margin-top:2px}
 .aw-cite p{font-size:12px;color:#666;line-height:1.75;font-style:italic}
 .aw-cite .by{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4CAF50;margin-top:7px}
-.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.q-theme-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#4CAF50;margin:20px 0 8px;padding-left:2px}
+body.dark .q-theme-label{color:#00b4d8}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
 .q-card{background:#fff;border:1px solid #f0f0f0;border-radius:10px;padding:18px 20px;border-left:3px solid #4CAF50;transition:all .25s}
 .q-card:hover{background:#f9fff9;transform:translateY(-2px);box-shadow:0 4px 16px rgba(76,175,80,0.1)}
 .qt{font-size:12.5px;color:#666;line-height:1.75;font-style:italic}
@@ -864,15 +868,33 @@ body.dark .ptag:hover{border-color:#00b4d8;color:#00b4d8}
       </div>
     </div>
     <div class="sec-heading fade-up" style="font-size:15px"><span class="acc">P</span>eer &amp; Leadership Quotes</div>
+
+    <div class="q-theme-label">🤝 Collaboration &amp; AEM Expertise</div>
     <div class="quote-grid stagger">
       <div class="q-card"><div class="qt">"Incredible support and collaboration… deep expertise in AEM… instrumental in key deals… consistently gone above and beyond."</div><div class="qf">— Anurag Sindhwani · Awardco</div></div>
       <div class="q-card"><div class="qt">"Your technical expertise and insights have been incredibly valuable… clarity you bring to complex discussions."</div><div class="qf">— Roshmi Mitra · Awardco</div></div>
+    </div>
+
+    <div class="q-theme-label">💼 Deal Impact &amp; Customer Focus</div>
+    <div class="quote-grid stagger">
       <div class="q-card"><div class="qt">"Exceptional work on the Siemens RFP… calm, friendly, responsive, and focused on what's best for the customer."</div><div class="qf">— Manan Jain · Awardco 2026</div></div>
       <div class="q-card"><div class="qt">"Rajeev has been doing a great job in a tricky situation… showed commitment and ownership… greatly appreciated."</div><div class="qf">— Leadership, UoN Engagement</div></div>
+    </div>
+
+    <div class="q-theme-label">🧠 Leadership, Mentorship &amp; Enablement</div>
+    <div class="quote-grid stagger">
       <div class="q-card"><div class="qt">"Silent mentor guiding across SA deal lifecycle, big and small."</div><div class="qf">— Anurag Punia · Awardco 2026</div></div>
       <div class="q-card"><div class="qt">"Grateful for the time and guidance… approachable… great learning experience."</div><div class="qf">— Karthik Menon · Awardco</div></div>
+    </div>
+
+    <div class="q-theme-label">🚀 Strategic &amp; GTM Contributions (AI / Innovation)</div>
+    <div class="quote-grid stagger">
       <div class="q-card"><div class="qt">"Great work at building the AI-Led PoV… top quality, well thought through, clean."</div><div class="qf">— Kunal Pandita · Awardco 2026</div></div>
       <div class="q-card"><div class="qt">"Well done for the IS Activations agent… demonstrates how to use AI in a smart way to speed up work."</div><div class="qf">— Julien Theulier · Awardco 2026</div></div>
+    </div>
+
+    <div class="q-theme-label">🌍 Team Impact &amp; Cross-team Recognition</div>
+    <div class="quote-grid stagger">
       <div class="q-card"><div class="qt">"Made an impact immediately to the team… looking forward to future work."</div><div class="qf">— Karan Kamra &amp; Team · Awardco 2026</div></div>
       <div class="q-card"><div class="qt">"Flexibility to collaborate across topics and support on EMEA areas."</div><div class="qf">— Saheb Lall · Awardco</div></div>
     </div>
